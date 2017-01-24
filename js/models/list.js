@@ -3,9 +3,9 @@
 
 function List(title) {
   this.title = title
-  this.id = List.all.length
-  this.tasks = []
   List.all.push(this)
+  this.id = List.all.length - 1
+  this.tasks = []
 }
 
 List.prototype.listEl = function() {
@@ -17,8 +17,8 @@ List.prototype.optionEl = function() {
 }
 
 List.prototype.build = function() {
-  $('#select_list').append(this.listEl())
-  $('#lists').append(this.optionEl())
+  $('#select_list').append(this.optionEl())
+  $('#lists').append(this.listEl())
 }
 
 List.all = []
